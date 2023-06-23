@@ -3,6 +3,7 @@ package com.starwars;
 public class StarWars {
 
 	public static void main(String[] args) {
+		Place somewhere = new Place();
 		
 		Planet Dagobah = new Planet("Dagobah", false);
 		
