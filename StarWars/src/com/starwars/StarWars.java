@@ -3,37 +3,28 @@ package com.starwars;
 public class StarWars {
 
 	public static void main(String[] args) {
-		Place somewhere = new Place();
+		Place Somewhere = new Place("Somewhere", false) {};
 		
 		Planet Dagobah = new Planet("Dagobah", false);
-		
 		Planet Alderaan= new Planet("Alderaan", true);
 		
-		Ship Millenium = new Ship("Millenium Falcon", "Unknown", false);
+		Ship Millenium = new Ship("Millenium Falcon", Somewhere, false);
+		Ship DeathStar = new Ship("Death Star", Somewhere, true);
 		
-		Ship DeathStar = new Ship("Death Star", "Endor System", true);
+		Jedi Yoda = new Jedi("Yoda", Dagobah, Somewhere, true);
+		Jedi Luke = new Jedi("Luke", Dagobah, Somewhere, true);
+		Jedi Vader = new Jedi("Darth Vader", Alderaan, Somewhere, false);
 		
-		Jedi Yoda = new Jedi("Yoda","Dagobah", "Unknown", true);
+		Character Hans = new Character("Han Solo", Alderaan, Somewhere, true) {};
+		Character Leia = new Character("Princess Leia", Alderaan, Somewhere, true) {};
 		
-		Jedi Luke = new Jedi("Luke", "Tatooine", "Ahch-To", true);
+		StormTrooper ST1 = new StormTrooper("Clone 001", Alderaan, Somewhere, true);
+		StormTrooper ST2 = new StormTrooper("Clone 002", Alderaan, Somewhere, true);
+		StormTrooper ST3 = new StormTrooper("Clone 003", Alderaan, Somewhere, true);
+		StormTrooper ST4 = new StormTrooper("Clone 004", Alderaan, Somewhere, true);
 		
-		Jedi Vader = new Jedi("Darth Vader", "Tatooine", "Unknown", false);
+		System.out.println(Yoda +"\n"+ Luke +"\n"+ Vader +"\n"+ Leia +"\n"+ Hans +"\n"+
+						   ST1 +"\n"+ ST2 +"\n"+ ST3 +"\n"+ ST4);
 		
-		Character Hans = new Character("Han Solo", "Corellia", "Mos Eisly", true);
-		
-		Character Leia = new Character("Princess Leia", "Alderaan", "Death Star", true);
-		
-		StormTrooper ST1 = new StormTrooper("Clone 001", "Kamino", "Death Star", true);
-		StormTrooper ST2 = new StormTrooper("Clone 002", "Kamino", "Death Star", true);
-		StormTrooper ST3 = new StormTrooper("Clone 003", "Kamino", "Death Star", true);
-		StormTrooper ST4 = new StormTrooper("Clone 004", "Kamino", "Death Star", true);
-		
-		System.out.println(Yoda.toString() + Luke.toString() + Vader.toString() + 
-						   Hans.toString() + Leia.toString() + ST1.toString() + 
-						   ST2.toString() + ST3.toString() + ST4.toString());
-		System.out.println(Alderaan.toString());
-		System.out.println(DeathStar.toString());
-
 	}
-
 }

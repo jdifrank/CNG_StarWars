@@ -1,21 +1,31 @@
 package com.starwars;
 
-public class Place {
-	//class variables
-	public String name;
-	public boolean isEmpire;
+abstract class Place {
 	
-	//getters + setters
-	public String getName() {
+	//class variables
+	private final String name;
+	private boolean isEmpire;
+	
+	//constructor
+	protected Place (String n, boolean i) {
+		name = n;
+		isEmpire = i;
+	}
+	
+	//getters + setter for isEmpire in case a place is conquered/liberated from empire
+	protected String getName() {
 		return this.name;
 	}
-	public void setName(String n) {
-		this.name = n;
+	protected boolean getEmpire() {
+		return isEmpire;
 	}
-	public boolean getEmpire() {
-		return this.isEmpire;
+	protected void setEmpire(boolean b) {
+		isEmpire = b;
 	}
-	public void setEmpire(boolean e) {
-		this.isEmpire = e;
+	
+	@Override
+	public String toString() {
+		return("Place: " + this.name + "\nPart of Empire?: " + this.isEmpire + "\n");
 	}
+	
 }
